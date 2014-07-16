@@ -32,7 +32,7 @@ public class ProcInvoker {
 
 	public ProcInvoker(String command) {
 		this.command = command;
-		logger.info("command: " + command);
+		logger.debug("command: " + command);
 	}
 
 	private String command;

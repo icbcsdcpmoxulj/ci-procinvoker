@@ -26,6 +26,12 @@ import org.apache.log4j.Logger;
 
 import ci.xlj.libs.utils.StringUtils;
 
+/**
+ * Invoke commands and give feedbacks
+ * 
+ * @author kfzx-xulj
+ *
+ */
 public class ProcInvoker {
 
 	private Logger logger = Logger.getLogger(ProcInvoker.class);
@@ -45,11 +51,18 @@ public class ProcInvoker {
 
 	private Process process;
 
+	/**
+	 * Default charset is UTF-8
+	 */
 	private String defaultCharset = "utf-8";
 
 	private String output;
 	private String errorMessage;
 
+	/**
+	 * @param charset
+	 * @return return code
+	 */
 	public int invoke(String charset) {
 		int returnCode = Integer.MIN_VALUE;
 
@@ -99,6 +112,9 @@ public class ProcInvoker {
 		return returnCode;
 	}
 
+	/**
+	 * Invoke by using UTF-8
+	 */
 	public int invoke() {
 		return invoke(defaultCharset);
 	}
